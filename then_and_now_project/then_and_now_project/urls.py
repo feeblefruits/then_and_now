@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import upload_before_photo, upload_after_photo
+from .views import upload_before_photo, upload_after_photo, upload_success, home_view
 
 urlpatterns = [
+    path('', home_view, name='home'),
     path('upload_before_photo/', upload_before_photo, name='upload_before_photo'),
     path('upload_after_photo/', upload_after_photo, name='upload_after_photo'),
+    path('upload_success/', upload_success, name='upload_success')
 ]
+  
+  

@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "then_and_now_app",
-    "BeforePhoto",
-    "AfterPhoto"
+    "then_and_now_project"
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -60,7 +58,7 @@ ROOT_URLCONF = "then_and_now_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates" ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -1,5 +1,5 @@
 from django import forms
-from then_and_now_app.models import BeforePhoto, AfterPhoto
+from then_and_now_project.models import BeforePhoto, AfterPhoto
 
 class BeforePhotoForm(forms.ModelForm):
     class Meta:

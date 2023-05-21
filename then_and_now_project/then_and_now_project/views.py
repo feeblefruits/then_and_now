@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import BeforePhotoForm, AfterPhotoForm
 
+def home_view(request):
+    return render(request, 'home.html')
+
 def upload_before_photo(request):
     if request.method == 'POST':
         # If the request method is POST, process the form data

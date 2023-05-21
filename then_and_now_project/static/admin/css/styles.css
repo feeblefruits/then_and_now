@@ -1,0 +1,23 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.before-photo-container {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.before-photo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.photo-details {
+    margin-top: 10px;
+}

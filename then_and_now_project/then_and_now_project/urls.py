@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import upload_before_photo, upload_after_photo, upload_success, home_view
 
 urlpatterns = [
@@ -23,6 +25,6 @@ urlpatterns = [
     path('upload_before_photo/', upload_before_photo, name='upload_before_photo'),
     path('upload_after_photo/', upload_after_photo, name='upload_after_photo'),
     path('upload_success/', upload_success, name='upload_success')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
   
   

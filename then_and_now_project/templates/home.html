@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page!</h1>
+    {% block content %}{% endblock %}
+</body>
+<body>
+    {% for before_photo in before_photos %}
+    <div class="before-photo-container">
+      <img src="{{ before_photo.photo.url }}" alt="{{ before_photo.title }}">
+      <p>Title: {{ before_photo.title }}</p>
+      <p>Description: {{ before_photo.description }}</p>
+      <p>Pseudonym: {{ before_photo.pseudonym }}</p>
+    </div>
+  {% endfor %}
+  </body>
+</html>

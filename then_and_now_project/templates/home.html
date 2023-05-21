@@ -1,7 +1,7 @@
 {% load static %}
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/styles.css' %}">
     <title>{% block title %}Home{% endblock %}</title>
 </head>
 <body>
@@ -9,13 +9,17 @@
     {% block content %}{% endblock %}
 </body>
 <body>
-    {% for before_photo in before_photos %}
-    <div class="before-photo-container">
-      <img src="{{ before_photo.photo.url }}" alt="{{ before_photo.title }}">
-      <p>Title: {{ before_photo.title }}</p>
-      <p>Description: {{ before_photo.description }}</p>
-      <p>Pseudonym: {{ before_photo.pseudonym }}</p>
+    <div class="gallery">
+        {% for before_photo in before_photos %}
+        <div class="before-photo-container">
+            <img src="{{ before_photo.photo.url }}" alt="{{ before_photo.title }}" class="zoom-out">
+            <div class="photo-details">
+                <p>Title: {{ before_photo.title }}</p>
+                <p>Description: {{ before_photo.description }}</p>
+                <p>Pseudonym: {{ before_photo.pseudonym }}</p>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-  {% endfor %}
-  </body>
+</body>
 </html>

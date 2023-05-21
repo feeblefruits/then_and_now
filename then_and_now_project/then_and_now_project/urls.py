@@ -20,11 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import upload_before_photo, upload_after_photo, upload_success, home_view
 
+mediapatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+staticpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 urlpatterns = [
     path('', home_view, name='home'),
     path('upload_before_photo/', upload_before_photo, name='upload_before_photo'),
     path('upload_after_photo/', upload_after_photo, name='upload_after_photo'),
     path('upload_success/', upload_success, name='upload_success')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + mediapatterns + staticpatterns
   
   
